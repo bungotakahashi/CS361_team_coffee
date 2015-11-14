@@ -14,7 +14,7 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_url_options = { :host => 'https://serene-citadel-2648.herokuapp.com' } 
+  config.action_mailer.default_url_options = { :host => "https://serene-citadel-2648.herokuapp"} 
   config.action_mailer.smtp_settings = {
       address:              'smtp.gmail.com',
       port:                 587,
