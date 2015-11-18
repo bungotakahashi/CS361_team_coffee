@@ -1,0 +1,10 @@
+<h1> subscription </h1>
+<p>Your current payment method is <%=@user.paymentMethod%></p>
+<%=form_for @user, :url => home_subscription_create_path, :method => "POST" do |f|%>
+<%= f.hidden_field :id, :value => @user.id%>
+Every month<%= f.radio_button 'paymentMethod' ,'Every month', :checked => 'checked'%>
+Every six months<%= f.radio_button 'paymentMethod' ,'Every six months'%>
+Every year<%= f.radio_button 'paymentMethod' ,'Every year'%>
+
+<%= f.submit "Update"%>
+<%end%>
