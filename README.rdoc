@@ -1,10 +1,10 @@
 == README
 CS 361 Fall 2015 Team Coffee!
 Who is who:
-Alex->Trugger
+Alex->Trugger 
 Bungo->bungotakahashi
 James->stallkaj
 Payton->TeamCoffee
 Sophia->Sophia Zhang
 Scott->coffeescott
-<tt>rake doc:app</tt>.
+
