@@ -25,6 +25,7 @@ Rails.application.configure do
       enable_starttls_auto: true
          }
 
+
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
   # For large-scale production use, consider using a caching reverse proxy like
