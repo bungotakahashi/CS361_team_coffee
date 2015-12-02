@@ -1,0 +1,22 @@
+<h1><%=@camp.name%></h1>
+<%= button_to :add_outbreaks, home_outbreak_new_path, params: {campid: @camp.id}, :method=>:get%>
+<%= button_to :add_food, home_food_new_path, params: {campid: @camp.id}, :method=>:get%>
+<%= button_to :add_medicine, home_medicine_new_path,params:{campid: @camp.id}, :method=>:get%>
+
+<%if @outbreak!=nil%>
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>Outbreaks</th>
+    </tr>
+  </thead>
+  <tbody>
+      <% @outbreak.each do |outbreak| %>
+    	<tr>
+			<td><%=outbreak.name%></td>
+		  </tr>
+      <% end %>
+   </tbody>
+</table>
+<%end%>
+<%= button_to "Back", home_camp_path, :method => "get" %>

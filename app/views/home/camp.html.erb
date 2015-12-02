@@ -1,0 +1,17 @@
+<%if @camp!=nil%>
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>Camps</th>
+    </tr>
+  </thead>
+  <tbody>
+      <% @camp.each do |camp| %>
+    	<tr>
+			<td><%= link_to "#{camp.name}", home_camp_details_path({:id => camp.id})%>
+		  </tr>
+      <% end %>
+   </tbody>
+</table>
+<%end%>
+<%= button_to "Back", home_show_path, :method => "get" %>
