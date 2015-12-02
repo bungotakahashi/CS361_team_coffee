@@ -41,6 +41,7 @@ class HomeController < ApplicationController
   def camp_details
     @camp=Camp.find(params[:id])
     @outbreak=Outbreak.where(campid: params[:id]).all
+    @food=Food.where(campid: params[:id]).all
   end
 
   def outbreak_new
@@ -65,7 +66,7 @@ class HomeController < ApplicationController
     @camp=Camp.find(params[:campid])
   end
   def food_create
-    @food=Food.new(outbreak_params)
+    @food=Food.new(food_params)
 
     respond_to do |format|
         if @food.save

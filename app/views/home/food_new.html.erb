@@ -1,0 +1,12 @@
+<%=form_for(@food, url: home_food_create_path) do |f|%>
+<fieldset>
+  <legend>Add food</legend>
+	<%=f.label :name%><br/>
+	<%=f.text_field :name %>
+  <%= f.hidden_field :campid, :value => @camp.id %>
+  <div class="submit">
+  	<%=f.submit "Add new food"%>
+  </div>
+
+</fieldset>
+<%end%>
