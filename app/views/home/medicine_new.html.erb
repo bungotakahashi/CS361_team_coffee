@@ -1,0 +1,12 @@
+<%=form_for(@medicine, url: home_medicine_create_path) do |f|%>
+<fieldset>
+  <legend>Add medicine</legend>
+	<%=f.label :name%><br/>
+	<%=f.text_field :name %>
+  <%= f.hidden_field :campid, :value => @camp.id %>
+  <div class="submit">
+  	<%=f.submit "Add new medicine"%>
+  </div>
+
+</fieldset>
+<%end%>

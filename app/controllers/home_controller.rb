@@ -42,6 +42,7 @@ class HomeController < ApplicationController
     @camp=Camp.find(params[:id])
     @outbreak=Outbreak.where(campid: params[:id]).all
     @food=Food.where(campid: params[:id]).all
+    @medicine=Medicine.where(campid: params[:id]).all
   end
 
   def outbreak_new
@@ -77,7 +78,22 @@ class HomeController < ApplicationController
     end
     
   end
+  def medicine_new
+    @medicine=Medicine.new
+    @camp=Camp.find(params[:campid])
+  end
+  def medicine_create
+    @medicine=Medicine.new(medicine_params)
 
+    respond_to do |format|
+        if @medicine.save
+          format.html {flash[:notice] =redirect_to action: "camp_details", id: @medicine.campid}
+        else
+           format.html {redirect_to :action => "medicine_new"}
+        end
+    end
+    
+  end
 private
   def payment_params
 		params.require(:user).permit(:id, :paymentMethod)

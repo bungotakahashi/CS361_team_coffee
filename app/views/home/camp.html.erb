@@ -1,5 +1,6 @@
+<div class="outer">
 <%if @camp!=nil%>
-<table class="table table-striped table-hover ">
+<table class="table_camp">
   <thead>
     <tr>
       <th>Camps</th>
@@ -8,10 +9,11 @@
   <tbody>
       <% @camp.each do |camp| %>
     	<tr>
-			<td><%= link_to "#{camp.name}", home_camp_details_path({:id => camp.id})%>
+			<td><%= link_to "#{camp.name}", home_camp_details_path({:id => camp.id})%></td>
 		  </tr>
       <% end %>
    </tbody>
 </table>
 <%end%>
-<%= button_to "Back", home_show_path, :method => "get" %>
+</div>
+<%= button_to "Back", home_show_path, :method => "get", :class => "btn", :id =>"btn_bottom"  %>
