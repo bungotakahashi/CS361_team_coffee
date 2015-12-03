@@ -1,0 +1,12 @@
+<%=form_for(@outbreak, url: home_outbreak_create_path) do |f|%>
+<fieldset>
+  <legend>Add outbreak</legend>
+	<%=f.label :name%><br/>
+	<%=f.text_field :name %>
+  <%= f.hidden_field :campid, :value => @camp.id %>
+  <div class="submit">
+  	<%=f.submit "Add a new outbreak"%>
+  </div>
+
+</fieldset>
+<%end%>

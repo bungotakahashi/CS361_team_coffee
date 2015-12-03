@@ -1,0 +1,12 @@
+<%=form_for(@camp, url: home_camp_create_path) do |f|%>
+<fieldset>
+  <legend>New Camp</legend>
+	<%=f.label :name%><br/>
+	<%=f.text_field :name %>
+  <%= f.hidden_field :userid, :value => current_user.id %>
+  <div class="submit">
+  	<%=f.submit "Add a new camp"%>
+  </div>
+
+</fieldset>
+<%end%>

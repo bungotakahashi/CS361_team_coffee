@@ -1,3 +1,6 @@
 <h1>Welcome (@_@)</h1>
-<%= link_to "subscription-payment-type", home_subscription_path({:user_id => current_user.id}) %>
+<!--<%= link_to "subscription-payment-type", home_subscription_path({:user_id => current_user.id}) %>-->
 
+<%= button_to :subscription, home_subscription_path, params: {user_id: current_user.id}, :method=>:get, :class => "btn"%>
+<%= button_to :camp, home_camp_path, params: {userid: current_user.id}, :method=>:get, :class => "btn"%>
+<%= button_to :add_camp, home_camp_new_path, :method=>:get, :class => "btn"%>

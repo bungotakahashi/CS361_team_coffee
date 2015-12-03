@@ -14,6 +14,16 @@ Rails.application.routes.draw do
   get 'home/show'
   get 'home/subscription' => 'home#subscription'
   post 'home/subscription_create' => 'home#subscription_create'
+  get 'home/camp'
+  get 'home/camp_new'
+  post 'home/camp_create'
+  get 'home/camp_details'
+  post 'home/outbreak_create'
+  get 'home/outbreak_new'
+  post 'home/food_create'
+  get 'home/food_new'
+  post 'home/medicine_create'
+  get 'home/medicine_new'
 
 root to: "home#index"
 

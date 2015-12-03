@@ -1,0 +1,19 @@
+<div class="outer">
+<%if @camp!=nil%>
+<table class="table_camp">
+  <thead>
+    <tr>
+      <th>Camps</th>
+    </tr>
+  </thead>
+  <tbody>
+      <% @camp.each do |camp| %>
+    	<tr>
+			<td><%= link_to "#{camp.name}", home_camp_details_path({:id => camp.id})%></td>
+		  </tr>
+      <% end %>
+   </tbody>
+</table>
+<%end%>
+</div>
+<%= button_to "Back", home_show_path, :method => "get", :class => "btn", :id =>"btn_bottom"  %>
