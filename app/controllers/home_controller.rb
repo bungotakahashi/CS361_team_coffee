@@ -61,6 +61,12 @@ class HomeController < ApplicationController
     end
     
   end
+  def outbreak_destroy
+    @outbreak=Outbreak.find(params[:id])
+    campid=@outbreak.campid
+    @outbreak.destroy
+    redirect_to action: "camp_details", :id=> campid
+  end
 
   def food_new
     @food=Food.new
@@ -78,6 +84,12 @@ class HomeController < ApplicationController
     end
     
   end
+  def food_destroy
+    @food=Food.find(params[:id])
+    campid=@food.campid
+    @food.destroy
+    redirect_to action: "camp_details", :id=> campid
+  end
   def medicine_new
     @medicine=Medicine.new
     @camp=Camp.find(params[:campid])
@@ -93,6 +105,12 @@ class HomeController < ApplicationController
         end
     end
     
+  end
+  def medicine_destroy
+    @medicine=Medicine.find(params[:id])
+    campid=@medicine.campid
+    @medicine.destroy
+    redirect_to action: "camp_details", :id=> campid
   end
 private
   def payment_params

@@ -20,10 +20,14 @@ Rails.application.routes.draw do
   get 'home/camp_details'
   post 'home/outbreak_create'
   get 'home/outbreak_new'
+  get 'home/outbreak_destroy'
   post 'home/food_create'
   get 'home/food_new'
+  get 'home/food_destroy'
   post 'home/medicine_create'
   get 'home/medicine_new'
+  get 'home/medicine_destroy'
+
 
 root to: "home#index"
 
